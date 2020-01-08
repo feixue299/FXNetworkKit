@@ -8,15 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		1FE0626623C5684C0098B283 /* FXNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE0625C23C5684C0098B283 /* FXNetworkKit.framework */; };
-		1FE0626B23C5684C0098B283 /* FXNetworkKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE0626A23C5684C0098B283 /* FXNetworkKitTests.swift */; };
 		1FE0626D23C5684C0098B283 /* FXNetworkKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FE0625F23C5684C0098B283 /* FXNetworkKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FE0627923C56CBF0098B283 /* Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE0627823C56CBF0098B283 /* Internal.swift */; };
 		1FE0627F23C56D320098B283 /* ContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE0627E23C56D320098B283 /* ContainerProtocol.swift */; };
 		1FE0628123C56D500098B283 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE0628023C56D500098B283 /* ApiManager.swift */; };
-		1FE0628423C56E940098B283 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE0628323C56E940098B283 /* Moya.framework */; };
-		1FE0628523C56E940098B283 /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE0628323C56E940098B283 /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1FE0628923C56EC40098B283 /* NetworkLogPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE0628823C56EC40098B283 /* NetworkLogPlugin.swift */; };
 		1FE0628B23C572820098B283 /* PageApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE0628A23C572820098B283 /* PageApiManager.swift */; };
+		1FE0629623C581C70098B283 /* ApiManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE0629523C581C60098B283 /* ApiManagerTests.swift */; };
+		1FEEC0A023C5845D006CED23 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE0629923C583100098B283 /* Alamofire.framework */; };
+		1FEEC0A123C5845E006CED23 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE0629923C583100098B283 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1FEEC0A223C5845E006CED23 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE0628323C56E940098B283 /* Moya.framework */; };
+		1FEEC0A323C5845E006CED23 /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE0628323C56E940098B283 /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1FEEC0A523C5846B006CED23 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FE0629923C583100098B283 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1FEEC0A623C5846B006CED23 /* Moya.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1FE0628323C56E940098B283 /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,13 +34,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1FE0628623C56E940098B283 /* Embed Frameworks */ = {
+		1FE0629723C582D80098B283 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1FE0628523C56E940098B283 /* Moya.framework in Embed Frameworks */,
+				1FEEC0A523C5846B006CED23 /* Alamofire.framework in CopyFiles */,
+				1FEEC0A623C5846B006CED23 /* Moya.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FEEC0A423C5845E006CED23 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1FEEC0A323C5845E006CED23 /* Moya.framework in Embed Frameworks */,
+				1FEEC0A123C5845E006CED23 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,7 +64,6 @@
 		1FE0625F23C5684C0098B283 /* FXNetworkKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXNetworkKit.h; sourceTree = "<group>"; };
 		1FE0626023C5684C0098B283 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FE0626523C5684C0098B283 /* FXNetworkKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FXNetworkKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FE0626A23C5684C0098B283 /* FXNetworkKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXNetworkKitTests.swift; sourceTree = "<group>"; };
 		1FE0626C23C5684C0098B283 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FE0627823C56CBF0098B283 /* Internal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Internal.swift; sourceTree = "<group>"; };
 		1FE0627E23C56D320098B283 /* ContainerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerProtocol.swift; sourceTree = "<group>"; };
@@ -56,6 +71,9 @@
 		1FE0628323C56E940098B283 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		1FE0628823C56EC40098B283 /* NetworkLogPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLogPlugin.swift; sourceTree = "<group>"; };
 		1FE0628A23C572820098B283 /* PageApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageApiManager.swift; sourceTree = "<group>"; };
+		1FE0629423C581C60098B283 /* FXNetworkKitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FXNetworkKitTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		1FE0629523C581C60098B283 /* ApiManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerTests.swift; sourceTree = "<group>"; };
+		1FE0629923C583100098B283 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FE0628423C56E940098B283 /* Moya.framework in Frameworks */,
+				1FEEC0A223C5845E006CED23 /* Moya.framework in Frameworks */,
+				1FEEC0A023C5845D006CED23 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,8 +129,9 @@
 		1FE0626923C5684C0098B283 /* FXNetworkKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				1FE0626A23C5684C0098B283 /* FXNetworkKitTests.swift */,
+				1FE0629523C581C60098B283 /* ApiManagerTests.swift */,
 				1FE0626C23C5684C0098B283 /* Info.plist */,
+				1FE0629423C581C60098B283 /* FXNetworkKitTests-Bridging-Header.h */,
 			);
 			path = FXNetworkKitTests;
 			sourceTree = "<group>";
@@ -155,6 +175,7 @@
 		1FE0628223C56E940098B283 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1FE0629923C583100098B283 /* Alamofire.framework */,
 				1FE0628323C56E940098B283 /* Moya.framework */,
 			);
 			name = Frameworks;
@@ -190,7 +211,7 @@
 				1FE0625823C5684C0098B283 /* Sources */,
 				1FE0625923C5684C0098B283 /* Frameworks */,
 				1FE0625A23C5684C0098B283 /* Resources */,
-				1FE0628623C56E940098B283 /* Embed Frameworks */,
+				1FEEC0A423C5845E006CED23 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,6 +227,7 @@
 			buildConfigurationList = 1FE0627323C5684C0098B283 /* Build configuration list for PBXNativeTarget "FXNetworkKitTests" */;
 			buildPhases = (
 				1FE0626123C5684C0098B283 /* Sources */,
+				1FE0629723C582D80098B283 /* CopyFiles */,
 				1FE0626223C5684C0098B283 /* Frameworks */,
 				1FE0626323C5684C0098B283 /* Resources */,
 			);
@@ -234,6 +256,7 @@
 					};
 					1FE0626423C5684C0098B283 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -290,7 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FE0626B23C5684C0098B283 /* FXNetworkKitTests.swift in Sources */,
+				1FE0629623C581C70098B283 /* ApiManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FXNetworkKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -494,6 +518,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wpf.FXNetworkKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FXNetworkKitTests/FXNetworkKitTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -503,6 +529,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FXNetworkKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -512,6 +539,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wpf.FXNetworkKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FXNetworkKitTests/FXNetworkKitTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

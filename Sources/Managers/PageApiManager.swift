@@ -35,6 +35,6 @@ open class PageApiManager<Target: TargetType, Container: ContainerProtocol & Cod
         page.nextPage()
     }
 
-    public override func requestData(response: ((Container.Model) -> Void)?) { }
+    open override func requestData(response: ((Container.Model) -> Void)?) { }
     func dataAppended() { }
 }

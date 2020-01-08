@@ -42,7 +42,7 @@ open class ApiManager<Target: TargetType, Container: ContainerProtocol & Codable
         }
     }
     
-    public func requestData(response: ((Container.Model) -> Void)?) { }
+    open func requestData(response: ((Container.Model) -> Void)?) { }
     
 }
 

@@ -1,5 +1,5 @@
 //
-//  FXNetworkKitTests.swift
+//  ApiManagerTests.swift
 //  FXNetworkKitTests
 //
 //  Created by Mr.wu on 2020/1/8.
@@ -7,9 +7,36 @@
 //
 
 import XCTest
-@testable import FXNetworkKit
+import FXNetworkKit
+import Moya
 
-class FXNetworkKitTests: XCTestCase {
+struct APIServer: TargetType {
+    var baseURL: URL
+    
+    var path: String
+    
+    var method: Moya.Method
+    
+    var sampleData: Data
+    
+    var task: Task
+    
+    var headers: [String : String]?
+}
+
+struct Container: Codable, ContainerProtocol {
+    var model: String?
+    
+    typealias Model = String
+}
+
+class Foo: ApiManager<APIServer, Container> {
+    override func requestData(response: ((String) -> Void)?) {
+        
+    }
+}
+
+class ApiManagerTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,13 +49,6 @@ class FXNetworkKitTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }
