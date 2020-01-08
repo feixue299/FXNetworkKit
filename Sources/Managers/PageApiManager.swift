@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-public class PageApiManager<Target: TargetType, Container: ContainerProtocol & Codable, Model: Codable>: ApiManager<Target, Container> where Container.Model == Array<Model> {
+open class PageApiManager<Target: TargetType, Container: ContainerProtocol & Codable, Model: Codable>: ApiManager<Target, Container> where Container.Model == Array<Model> {
     
     var page: Page<Container.Model> = Page(data: [])
     public var pageEnd: Bool {
@@ -18,8 +18,6 @@ public class PageApiManager<Target: TargetType, Container: ContainerProtocol & C
     public var modelGroup: Container.Model {
         return page.data
     }
-    
-    
     
     override func requestTarget(_ target: Target, containerClosure:((Container) -> Void)? = nil, modelClosure: ((Container.Model?) -> Void)? = nil) {
         super.requestTarget(target, containerClosure: containerClosure) { (modelGroup) in

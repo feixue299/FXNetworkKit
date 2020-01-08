@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-public class ApiManager<Target: TargetType, Container: ContainerProtocol & Codable> where Container.Model: Codable {
+open class ApiManager<Target: TargetType, Container: ContainerProtocol & Codable> where Container.Model: Codable {
     
     private(set) var isNetworking: Bool = false
     
