@@ -11,7 +11,7 @@ import Moya
 
 open class PageApiManager<Target: TargetType, Container: ContainerProtocol & Codable, Model: Codable>: ApiManager<Target, Container> where Container.Model == Array<Model> {
     
-    var page: Page<Container.Model> = Page(data: [])
+    public private(set) var page: Page<Container.Model> = Page(data: [])
     public var pageEnd: Bool {
         return page.pageEnd
     }
