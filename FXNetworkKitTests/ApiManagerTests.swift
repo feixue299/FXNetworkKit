@@ -11,15 +11,15 @@ import FXNetworkKit
 import Moya
 
 struct APIServer: TargetType {
-    var baseURL: URL
+    var baseURL: URL = URL(string: "")!
     
-    var path: String
+    var path: String = ""
     
-    var method: Moya.Method
+    var method: Moya.Method = .post
     
-    var sampleData: Data
+    var sampleData: Data = Data()
     
-    var task: Task
+    var task: Task = .requestPlain
     
     var headers: [String : String]?
 }
@@ -31,9 +31,14 @@ struct Container: Codable, ContainerProtocol {
 }
 
 class Foo: ApiManager<APIServer, Container> {
-    override func requestData(response: ((String) -> Void)?) {
-        
+    override init(plugins: [PluginType] = []) {
+        super.init(plugins: plugins)
     }
+    
+    override func requestData(response: ((String) -> Void)?) {
+        super.requestTarget(APIServer(), containerClosure: nil, modelClosure: nil)
+    }
+    
 }
 
 class ApiManagerTests: XCTestCase {

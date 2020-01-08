@@ -19,7 +19,7 @@ open class PageApiManager<Target: TargetType, Container: ContainerProtocol & Cod
         return page.data
     }
     
-    override func requestTarget(_ target: Target, containerClosure:((Container) -> Void)? = nil, modelClosure: ((Container.Model?) -> Void)? = nil) {
+    override public func requestTarget(_ target: Target, containerClosure:((Container) -> Void)? = nil, modelClosure: ((Container.Model?) -> Void)? = nil) {
         super.requestTarget(target, containerClosure: containerClosure) { (modelGroup) in
             if let modelGroup = modelGroup {
                 self.page.data.append(contentsOf: modelGroup)

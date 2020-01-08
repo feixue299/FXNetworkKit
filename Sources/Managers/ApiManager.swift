@@ -25,7 +25,7 @@ open class ApiManager<Target: TargetType, Container: ContainerProtocol & Codable
         self.plugins = plugins
     }
     
-    func requestTarget(_ target: Target, containerClosure:((Container) -> Void)? = nil, modelClosure: ((Container.Model?) -> Void)? = nil) {
+    public func requestTarget(_ target: Target, containerClosure:((Container) -> Void)? = nil, modelClosure: ((Container.Model?) -> Void)? = nil) {
         guard !isNetworking else { return }
         network.request(target) { result in
             if case let .success(resp) = result {
