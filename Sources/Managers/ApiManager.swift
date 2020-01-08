@@ -25,7 +25,7 @@ public class ApiManager<Target: TargetType, Container: ContainerProtocol & Codab
         self.plugins = plugins
     }
     
-    func requestTarget(_ target: Target, container:((Container) -> Void)? = nil, response: ((Container.Model) -> Void)?) {
+    func requestTarget(_ target: Target, containerClosure:((Container) -> Void)? = nil, modelClosure: ((Container.Model?) -> Void)? = nil) {
         guard !isNetworking else { return }
         network.request(target) { result in
             if case let .success(resp) = result {
@@ -33,10 +33,8 @@ public class ApiManager<Target: TargetType, Container: ContainerProtocol & Codab
                     print("resp.data:\(try resp.mapJSON())")
                     let model = try JSONDecoder().decode(Container.self, from: resp.data)
                     print("success.model:\(model)")
-                    container?(model)
-                    if let model = model.model {
-                        response?(model)
-                    }
+                    containerClosure?(model)
+                    modelClosure?(model.model)
                 } catch {
                     print("try.error:\(error)")
                 }
