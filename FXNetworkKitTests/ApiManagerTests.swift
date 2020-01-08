@@ -24,24 +24,24 @@ struct APIServer: TargetType {
     var headers: [String : String]?
 }
 
-struct Container: Codable, ContainerProtocol {
-    var model: String?
-    
-    typealias Model = String
-}
-
-class Foo: ApiManager<APIServer, Container> {
-    override init(plugins: [PluginType] = []) {
-        super.init(plugins: plugins)
-    }
-    
-    override func requestData(response: ((String) -> Void)?) {
-        super.requestTarget(APIServer(), containerClosure: nil, modelClosure: nil)
-    }
-    
-}
-
 class ApiManagerTests: XCTestCase {
+    
+    struct Container: Codable, ContainerProtocol {
+        var model: String?
+        
+        typealias Model = String
+    }
+    
+    class Foo: ApiManager<APIServer, Container> {
+        override init(plugins: [PluginType] = []) {
+            super.init(plugins: plugins)
+        }
+        
+        override func requestData(response: ((String) -> Void)?) {
+            super.requestTarget(APIServer(), containerClosure: nil, modelClosure: nil)
+        }
+        
+    }
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

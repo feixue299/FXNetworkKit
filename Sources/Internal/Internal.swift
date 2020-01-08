@@ -9,7 +9,7 @@
 import Foundation
 
 public class Page<Data> {
-    private(set) var page: Int = 1
+    public private(set) var page: Int = 1
     public let pageSize: Int = 10
     public internal(set) var pageEnd: Bool = false
     public internal(set) var data: Data
