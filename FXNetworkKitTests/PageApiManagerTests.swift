@@ -28,10 +28,10 @@ class PageApiManagerTests: XCTestCase {
         }
         override func requestData(response: (([PageApiManagerTests.TestModel]) -> Void)?) {
             //get
-            print("page.page:\(page.page)")
-            print("page.data:\(page.data)")
-            print("page.pageEnd:\(page.pageEnd)")
-            print("page.pageSize:\(page.pageSize)")
+            print("page.page:\(page)")
+            print("page.data:\(modelGroup)")
+            print("page.pageEnd:\(pageEnd)")
+            print("page.pageSize:\(pageSize)")
             
             requestTarget(APIServer(), containerClosure: nil, modelClosure: nil)
         }

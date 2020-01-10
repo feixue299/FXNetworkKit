@@ -8,11 +8,11 @@
 
 import Foundation
 
-public class Page<Data> {
-    public private(set) var page: Int = 1
-    public let pageSize: Int = 10
-    public internal(set) var pageEnd: Bool = false
-    public internal(set) var data: Data
+class Page<Data> {
+    private(set) var page: Int = 1
+    let pageSize: Int = 10
+    var pageEnd: Bool = false
+    var data: Data
     
     init(data: Data) {
         self.data = data

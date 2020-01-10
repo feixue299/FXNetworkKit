@@ -11,27 +11,33 @@ import Moya
 
 open class PageApiManager<Target: TargetType, Container: ContainerProtocol & Codable, Model: Codable>: ApiManager<Target, Container> where Container.Model == Array<Model> {
     
-    open var page: Page<Container.Model> = Page(data: [])
+    private var internalPage: Page<Container.Model> = Page(data: [])
+    public var page: Int {
+        return internalPage.page
+    }
+    public var pageSize: Int {
+        return internalPage.pageSize
+    }
     public var pageEnd: Bool {
-        return page.pageEnd
+        return internalPage.pageEnd
     }
     public var modelGroup: Container.Model {
-        return page.data
+        return internalPage.data
     }
     
     override public func requestTarget(_ target: Target, containerClosure:((Container) -> Void)? = nil, modelClosure: ((Container.Model?) -> Void)? = nil) {
         super.requestTarget(target, containerClosure: containerClosure) { (modelGroup) in
             if let modelGroup = modelGroup {
-                self.page.data.append(contentsOf: modelGroup)
-                if modelGroup.count < self.page.pageSize {
-                    self.page.pageEnd = true
+                self.internalPage.data.append(contentsOf: modelGroup)
+                if modelGroup.count < self.internalPage.pageSize {
+                    self.internalPage.pageEnd = true
                 }
             } else {
-                self.page.pageEnd = true
+                self.internalPage.pageEnd = true
             }
-            modelClosure?(self.page.data)
+            modelClosure?(self.internalPage.data)
         }
-        page.nextPage()
+        internalPage.nextPage()
     }
 
     open override func requestData(response: ((Container.Model) -> Void)?) { }
