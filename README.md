@@ -19,7 +19,7 @@ import the framework with `import FXNetworkKit`.
 Make the following entry in your Cartfile:
 
 ```
-github "feixue299/FXNetworkKit"
+github "feixue299/FXNetworkKit" ~>1.2.9
 ```
 
 Then run `carthage update`.
