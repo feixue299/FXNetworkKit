@@ -41,4 +41,7 @@ open class PageApiManager<Target: TargetType, Container: ContainerProtocol & Cod
     }
 
     open override func requestData(response: ((Container.Model) -> Void)?) { }
+    public func reset() {
+        internalPage = Page(data: [])
+    }
 }
