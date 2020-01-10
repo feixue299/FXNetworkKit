@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "FXNetworkKit"
-  spec.version      = "1.2.5"
+  spec.version      = "1.2.6"
   spec.summary      = "A FXNetworkKit"
   spec.homepage     = "https://github.com/feixue299/FXNetworkKit"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
