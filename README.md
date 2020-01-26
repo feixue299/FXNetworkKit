@@ -5,7 +5,7 @@
 For FXNetworkKit, use the following entry in your Podfile:
 
 ```rb
-pod 'FXNetworkKit'
+pod 'FXNetworkKit', '~>1.2.9'
 ```
 
 Then run `pod install`.
