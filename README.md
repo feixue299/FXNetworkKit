@@ -23,3 +23,32 @@ github "feixue299/FXNetworkKit" ~>1.2.9
 ```
 
 Then run `carthage update`.
+
+## Example
+```swift
+import Moya
+
+public struct MessageModel<Model: Codable>: Codable {
+    public let code: StringContains
+    public let message: String
+    public let data: Model?
+}
+
+extension MessageModel: ContainerProtocol {
+    public var model: Model? {
+        return data
+    }
+}
+
+public struct Model: Codable {
+}
+
+public class ModelManager: PageApiManager<##Moya.TargetType, MessageModel<[Model]>, Model> {
+    public override func requestData(response: (([Model]) -> Void)?) {
+        requestTarget(##Moya.TargetType, modelClosure: ...)
+    }
+}
+
+```
+
+
