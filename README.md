@@ -44,9 +44,11 @@ public struct Model: Codable {
 }
 
 public class ModelManager: PageApiManager<##Moya.TargetType, MessageModel<[Model]>, Model> {
+    ...
     public override func requestData(response: (([Model]) -> Void)?) {
         requestTarget(##Moya.TargetType, modelClosure: ...)
     }
+    ...
 }
 
 ```
