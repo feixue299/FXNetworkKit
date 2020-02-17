@@ -29,7 +29,7 @@ Then run `carthage update`.
 import Moya
 
 public struct MessageModel<Model: Codable>: Codable {
-    public let code: StringContains
+    public let code: Int
     public let message: String
     public let data: Model?
 }
