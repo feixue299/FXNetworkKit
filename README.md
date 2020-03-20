@@ -1,5 +1,10 @@
 # FXNetworkKit
 
+## Requirements
+- iOS 9.0+
+ 
+## Installation
+
 ### CocoaPods
 
 For FXNetworkKit, use the following entry in your Podfile:
