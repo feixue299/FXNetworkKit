@@ -10,7 +10,7 @@
 For FXNetworkKit, use the following entry in your Podfile:
 
 ```rb
-pod 'FXNetworkKit', '~>1.2.10'
+pod 'FXNetworkKit', '~>1.2.11'
 ```
 
 Then run `pod install`.
@@ -24,7 +24,7 @@ import the framework with `import FXNetworkKit`.
 Make the following entry in your Cartfile:
 
 ```
-github "feixue299/FXNetworkKit" ~>1.2.10
+github "feixue299/FXNetworkKit" ~>1.2.11
 ```
 
 Then run `carthage update`.
@@ -36,7 +36,7 @@ Create a `Package.swift` file.
 ```swift
 let package = Package(
     dependencies: [
-        .package(url: "https://github.com/feixue299/FXNetworkKit.git", from: "1.2.10")
+        .package(url: "https://github.com/feixue299/FXNetworkKit.git", from: "1.2.11")
     ],
     // ...
 )
