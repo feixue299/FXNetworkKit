@@ -40,6 +40,7 @@ let package = Package(
     ],
     // ...
 )
+```
 
 ## Example
 ```swift
