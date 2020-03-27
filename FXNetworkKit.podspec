@@ -10,5 +10,5 @@ Pod::Spec.new do |spec|
   spec.swift_version = '5.0'
   spec.source_files  = "Sources", "Sources/**/*.{swift}"
   spec.requires_arc = true
-  spec.dependency "Moya"
+  spec.dependency "Moya", "~> 13.0.1"
 end
